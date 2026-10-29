@@ -144,7 +144,8 @@ section.band{padding-block:clamp(64px,8vw,112px)}
 .method{background:var(--mist)}
 #isler{border-top:1px solid var(--rule)}
 #metod.band{padding-block:clamp(52px,6vw,84px)}
-.mhead{display:flex;justify-content:space-between;align-items:end;gap:28px;flex-wrap:wrap}
+.mhead{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:end;gap:28px 56px}
+@media (max-width:900px){.mhead{grid-template-columns:1fr}}
 .mhead p{color:var(--muted);max-width:42ch}
 .mgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,80px);align-items:center;margin-top:28px}
 @media (max-width:900px){.mgrid{grid-template-columns:1fr}}
@@ -562,8 +563,8 @@ footer{background:var(--night);color:#8A8A8A;padding-block:clamp(72px,9vw,120px)
   <section class="band" id="isler" aria-labelledby="wt">
     <div class="wrap">
       <div class="mhead">
-        <div><p class="kicker" data-i="nav.work">İşlərimiz</p><h2 class="h2" id="wt" data-i="wk.h">Həyata keçirdiyimiz kampaniyalardan seçmələr.</h2></div>
-        <p data-i="wk.p">Burada agentliyin tərəfdaş brendlər üçün gördüyü işlərin bir hissəsi təqdim olunur. Hər brendin səhifəsində həmin kampaniya çərçivəsində hazırlanmış Reels paylaşımları yer alır.</p>
+        <div><p class="kicker" data-i="nav.work">İşlərimiz</p><h2 class="h2" id="wt" data-i="wk.h">Kampaniyalarımızdan seçmələr.</h2></div>
+        <p data-i="wk.p">Tərəfdaş brendlər üçün həyata keçirdiyimiz işlərin bir hissəsi. Hər brendin səhifəsində kampaniya çərçivəsində paylaşılan Reels videoları yer alır.</p>
       </div>
       <div class="tiles" id="index"></div>
     </div>
@@ -874,7 +875,7 @@ az:{
  "st.2":"Seçim","st.2t":"Auditoriya göstəricilərinə əsaslanaraq brend üçün optimal influencer portfeli formalaşdırılır.",
  "st.3":"İcra","st.3t":"Hər influencer üçün fərdi ssenari hazırlanır, kontent təsdiqlənir və razılaşdırılmış təqvimə uyğun olaraq dərc edilir.",
  "st.4":"Nəticə","st.4t":"Performans göstəriciləri təhlil edilir və nəticələr yekun hesabatda təqdim olunur.",
- "wk.h":"Həyata keçirdiyimiz kampaniyalardan seçmələr.","wk.p":"Burada agentliyin tərəfdaş brendlər üçün gördüyü işlərin bir hissəsi təqdim olunur. Hər brendin səhifəsində həmin kampaniya çərçivəsində hazırlanmış Reels paylaşımları yer alır.",
+ "wk.h":"Kampaniyalarımızdan seçmələr.","wk.p":"Tərəfdaş brendlər üçün həyata keçirdiyimiz işlərin bir hissəsi. Hər brendin səhifəsində kampaniya çərçivəsində paylaşılan Reels videoları yer alır.",
  "wk.soon":"Tezliklə","mix.t":"Digər kampaniyalar","mix.w":"Müxtəlif brendlər üçün influencerlərimizin hazırladığı ayrı-ayrı Reels paylaşımları.","wk.next":"Növbəti uğur hekayəsi sizin brendiniz ola bilər",
  "bp.back":"Bütün işlər","bp.count":"Reels paylaşımı","bp.empty":"Bu brend üzrə paylaşımlar tezliklə əlavə olunacaq.","bp.watch":"Instagram-da izləyin",
  "nw.k":"Media mərkəzi","nw.h":"Məqalələr, təqdimatlar və açılışlar.","nw.p":"Agentliyin layihələri, brend təqdimatları, açılış mərasimləri və influencer marketinqi sahəsinə dair analitik məqalələr.",
@@ -909,7 +910,7 @@ en:{
  "st.2":"Selection","st.2t":"Guided by audience data, we build the optimal influencer portfolio for the brand.",
  "st.3":"Execution","st.3t":"Each influencer receives a tailored script; content is approved and published according to the agreed schedule.",
  "st.4":"Results","st.4t":"We analyse performance indicators and present the outcomes in a final report.",
- "wk.h":"A selection of our campaigns.","wk.p":"This is a selection of the work we have delivered for our partner brands. Each brand page features the Reels produced as part of that campaign.",
+ "wk.h":"A selection of our campaigns.","wk.p":"Part of the work we have delivered for our partner brands. Each brand page features the Reels published as part of that campaign.",
  "wk.soon":"Coming soon","mix.t":"Other campaigns","mix.w":"Individual Reels created by our influencers for a range of brands.","wk.next":"Your brand could be our next success story",
  "bp.back":"All work","bp.count":"Reels","bp.empty":"Posts for this brand will be added soon.","bp.watch":"Watch on Instagram",
  "nw.k":"Newsroom","nw.h":"Articles, launches and openings.","nw.p":"Agency projects, brand launches, opening events and analytical articles on influencer marketing.",
