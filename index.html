@@ -269,11 +269,14 @@ section.band{padding-block:clamp(64px,8vw,112px)}
 .reel .rcov{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .reel.has-cov::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.8));z-index:0}
 .reel>span{z-index:1}
-.reels.live{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
-.reel-embed{display:grid;gap:10px}
+.reels.live{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:22px 16px}
+@media (max-width:520px){.reels.live{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 10px}}
+.reel-embed{display:grid;gap:8px;align-content:start}
+.rbox{position:relative;display:block;aspect-ratio:326/408;overflow:hidden;border-radius:14px;background:#111}
+.rbox iframe{position:absolute;left:0;top:0;width:326px!important;height:480px;max-width:none!important;aspect-ratio:auto!important;border:0!important;border-radius:0!important;transform-origin:0 0}
 .reel-embed iframe{width:100%;aspect-ratio:9/16.5;max-width:100%;border:1px solid var(--rule);border-radius:16px;background:#fff}
-.re-t{font-size:17px;font-weight:500}
-.reel-open{font-size:14px;color:var(--bordo)}
+.re-t{font-size:13.5px;font-weight:500;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reel-open{font-size:12.5px;color:var(--bordo)}
 .reel .rb{font-size:13px;opacity:.85;position:relative;margin-bottom:2px}
 .btile.cta{background:var(--paper);border:1px dashed #C6C6C6;color:var(--ink);justify-content:flex-end}
 .btile.cta:hover{border-color:var(--bordo)}
@@ -756,10 +759,10 @@ const SERVICES=[
        en:["Brand strategy and positioning","Naming and tagline development","Social media style and content plan","Market launch campaign"]}},
  {id:"mehsul-cekilisleri",ic:"pr",
   t:{az:"Məhsul çəkilişləri",en:"Product production"},
-  s:{az:"Brendlərin məhsulları üçün sosial media, kataloq və reklam məqsədli peşəkar foto və video çəkilişlər.",en:"Professional photo and video production of brand products for social media, catalogues and advertising."},
+  s:{az:"Brendlərin məhsulları üçün sosial media, kataloq və reklam məqsədli peşəkar foto və video çəkilişlər, həmçinin UGC kontent.",en:"Professional photo and video production of brand products for social media, catalogues and advertising, as well as UGC content."},
   lead:{az:"Məhsulun vizual təqdimatı onun alıcı gözündəki dəyərini birbaşa müəyyən edir. Biz konsepsiyadan montaja qədər çəkilişin bütün mərhələlərini təşkil edirik. Dreame brendinin məhsul çəkilişləri, məsələn, bütünlüklə komandamız tərəfindən həyata keçirilib.",en:"How a product is presented directly shapes its value in the customer's eyes. We manage every stage of production, from concept to final edit. Dreame's product shoots, for example, were produced entirely by our team."},
-  inc:{az:["Çəkiliş konsepsiyası və ssenari","Studiya və məkan çəkilişləri","Məhsul fotoqrafiyası","Reels və reklam videoları","Montaj və rəng korreksiyası"],
-       en:["Shoot concept and script","Studio and on-location shoots","Product photography","Reels and advertising videos","Editing and colour grading"]},
+  inc:{az:["Çəkiliş konsepsiyası və ssenari","Studiya və məkan çəkilişləri","Məhsul fotoqrafiyası","Reels və reklam videoları","UGC: real istifadəçi üslubunda məhsul videoları","Montaj və rəng korreksiyası"],
+       en:["Shoot concept and script","Studio and on-location shoots","Product photography","Reels and advertising videos","UGC: product videos in an authentic user style","Editing and colour grading"]},
   link:"#brend-dreame",linkT:{az:"Dreame layihəsinə baxın",en:"View the Dreame project"}},
  {id:"tedbir-teskili",ic:"ev",
   t:{az:"Influencer tədbirləri",en:"Influencer events"},
@@ -1026,7 +1029,8 @@ const tones=["g0","g1","g2"], TS=[1,0,2];
 const slug=b=>"brend-"+b.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const cntTxt=w=>w.reels.length?`${w.reels.length} Reels`:tr("wk.soon");
 const miniFrame=r=>{ if(!LIVE||!r) return ""; const e=embedURL(r.url); return e?`<iframe class="mif" src="${e}" loading="lazy" tabindex="-1" scrolling="no" title=""></iframe>`:""; };
-function fitMinis(){ document.querySelectorAll(".mini").forEach(m=>{ const f=m.querySelector(".mif"); if(!f) return; const w=m.clientWidth,h=m.clientHeight,sc=h/408; f.style.transform=`translate(${((w-326*sc)/2).toFixed(1)}px,${(-54*sc).toFixed(1)}px) scale(${sc.toFixed(4)})`; }); }
+function fitMinis(){ document.querySelectorAll(".rbox").forEach(b=>{ const f=b.querySelector("iframe"); if(!f) return; const sc=b.clientWidth/326; f.style.transform=`translateY(${(-54*sc).toFixed(1)}px) scale(${sc.toFixed(4)})`; });
+ document.querySelectorAll(".mini").forEach(m=>{ const f=m.querySelector(".mif"); if(!f) return; const w=m.clientWidth,h=m.clientHeight,sc=h/408; f.style.transform=`translate(${((w-326*sc)/2).toFixed(1)}px,${(-54*sc).toFixed(1)}px) scale(${sc.toFixed(4)})`; }); }
 addEventListener("resize",()=>fitMinis());
 function renderTiles(){
   $("#index").innerHTML=WORK.map((w,i)=>{const t=TS[i%3];
@@ -1045,7 +1049,7 @@ const embedURL=u=>{const m=u.match(/instagram\.com\/(reel|p|tv)\/([A-Za-z0-9_-]+
 function reelCard(r,j,tone,brand){
   const u=reelURL(r), e=embedURL(u), cov=typeof r==="object"&&r.cover, who=typeof r==="object"&&r.who?"@"+String(r.who).replace(/^@/,""):"";
   const title=brand?(who?`${brand} × ${who}`:brand):(who||"Instagram Reels");
-  if(LIVE&&e) return `<div class="reel-embed"><span class="re-t">${esc(title)}</span><iframe src="${esc(e)}" loading="lazy" allowtransparency="true" scrolling="no" title="${esc(title)}"></iframe><a class="reel-open" href="${esc(u)}" target="_blank" rel="noopener">${esc(tr("bp.watch"))}</a></div>`;
+  if(LIVE&&e) return `<div class="reel-embed"><span class="re-t">${esc(title)}</span><span class="rbox"><iframe src="${esc(e)}" loading="lazy" allowtransparency="true" scrolling="no" title="${esc(title)}"></iframe></span><a class="reel-open" href="${esc(u)}" target="_blank" rel="noopener">${esc(tr("bp.watch"))}</a></div>`;
   return `<a class="reel ${cov?"has-cov":tone}" href="${esc(u)}" target="_blank" rel="noopener">${cov?`<img class="rcov" src="${esc(cov)}" alt="" loading="lazy">`:""}<span class="play" aria-hidden="true"></span><span class="rn">${esc(title)}</span><span class="ro">${esc(tr("bp.watch"))}</span></a>`;
 }
 function openBrand(w){
@@ -1053,7 +1057,7 @@ function openBrand(w){
   bpBody.innerHTML=`<p class="kicker">${esc(tr("nav.work"))}</p><h2 class="bp-title" id="bpTitle">${esc(w.b)}</h2><p class="bp-what">${esc(L(w.w))}</p>
    ${w.kpi?`<div class="kpis"><div><b>${w.kpi.v}</b><span>${esc(tr("k.v"))}</span></div><div><b>${w.kpi.a}</b><span>${esc(tr("k.a"))}</span></div><div><b>${w.kpi.r}</b><span>${esc(tr("k.r"))}</span></div><div><b>${w.kpi.e}</b><span>${esc(tr("k.e"))}</span></div></div><p class="kpi-note">${w.reels.length} Reels. ${esc(tr("k.note"))}</p>`:`<p class="bp-count">${w.reels.length?w.reels.length+" "+esc(tr("bp.count")):esc(tr("bp.empty"))}</p>`}
    <div class="reels${LIVE?" live":""}">${w.reels.map((r,j)=>reelCard(r,j,tones[(i+j)%3],w.b)).join("")}</div>`;
-  if(bp.hidden){bp.hidden=false; bp.scrollTop=0; document.body.style.overflow="hidden"; $("#bpBack").focus();}
+  if(bp.hidden){bp.hidden=false; bp.scrollTop=0; document.body.style.overflow="hidden"; $("#bpBack").focus();} requestAnimationFrame(fitMinis);
 }
 function closeBrand(){ if(bp.hidden)return; bp.hidden=true; document.body.style.overflow=""; }
 let backTo="isler";
