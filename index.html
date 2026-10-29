@@ -7,6 +7,9 @@
 <meta name="keywords" content="influencer marketinq, influencer marketing, influencer agentliyi, influencer agency Azerbaijan, Bakı influencer, blogger reklam, Instagram reklam, UGC, influencer təlimi, blogçuluq kursu, influencer school, Blogstar Academy">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://blogstar.az/">
+<link rel="alternate" hreflang="az" href="https://blogstar.az/">
+<link rel="alternate" hreflang="en" href="https://blogstar.az/en/">
+<link rel="alternate" hreflang="x-default" href="https://blogstar.az/">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#000000">
@@ -899,8 +902,8 @@ en:{
  "m.err":"Your message could not be sent. Please check your connection and try again, or write to info@blogstar.az.",
  "ft.rights":"© 2016–2026 Blogstar. All rights reserved.","close":"Close"
 }};
-let LANG="az";
-try{const v=localStorage.getItem("bs-lang"); if(v==="en"||v==="az") LANG=v;}catch(e){}
+const PAGE_LANG_AZ="az";
+let LANG=PAGE_LANG_AZ;
 const tr=k=>(T[LANG]&&T[LANG][k])??T.az[k]??k;
 const L=o=>o&&typeof o==="object"&&!Array.isArray(o)?(o[LANG]??o.az):o;
 /* ================================= */
@@ -1152,10 +1155,10 @@ function setLang(l){
   document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));
   document.querySelectorAll(".langField").forEach(f=>f.value=l);
   $("#burger").textContent=tr(nav.classList.contains("open")?"menu.close":"menu.open");
-  document.title=l==="en"?"Blogstar — Influencer Marketing Agency & Influencer School | Baku, Azerbaijan":"Blogstar — Influencer marketinq agentliyi və Influencer School | Bakı, Azərbaycan";
+  document.title=l==="en"?"Blogstar — Influencer Marketing Agency in Azerbaijan | Baku":"Blogstar — Influencer marketinq agentliyi və Influencer School | Bakı, Azərbaycan";
   renderServices(); renderTiles(); fitMinis(); renderNews(); reveal(); if(!bp.hidden) route();
 }
-document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{const l=b.dataset.lang; if(l===LANG)return; location.href=(l==="en"?"/en/":"/")+location.hash;}));
 
 /* form */
 function wire(form,out,okKey){ $(form).addEventListener("submit",async e=>{e.preventDefault(); const f=e.target, o=$(out); o.hidden=true; let bad=null;
