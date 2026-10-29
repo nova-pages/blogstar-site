@@ -1,0 +1,4 @@
+# Köhnə saytın ünvanları yeni səhifələrə yönləndirilir
+/az      /    301
+/az/*    /    301
+/en/*    /en/ 301
