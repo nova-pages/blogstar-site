@@ -1220,7 +1220,7 @@ function reelCard(r,j,tone,brand){
 function openBrand(w){
   const i=WORK.indexOf(w);
   bpBody.innerHTML=`<p class="kicker">${esc(tr("nav.work"))}</p><h2 class="bp-title" id="bpTitle">${esc(w.b)}</h2><p class="bp-what">${esc(L(w.w))}</p>${w.f?`<ul class="bp-facts">${L(w.f).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
-   ${w.kpi?`<div class="kpis"><div><b>${w.kpi.v}</b><span>${esc(tr("k.v"))}</span></div><div><b>${w.kpi.a}</b><span>${esc(tr("k.a"))}</span></div><div><b>${w.kpi.r}</b><span>${esc(tr("k.r"))}</span></div><div><b>${w.kpi.e}</b><span>${esc(tr("k.e"))}</span></div></div><p class="kpi-note">${w.part?esc(tr("k.part"))+" ":""}${w.reels.filter(r=>!r.tt).length} Reels. ${esc(tr(w.reels.some(r=>r.tt)?"k.note2":"k.note"))}</p>`:`<p class="bp-count">${w.reels.length?w.reels.length+" "+esc(tr("bp.count")):esc(tr("bp.empty"))}</p>`}
+   ${w.kpi?`<div class="kpis"><div><b>${w.kpi.v}</b><span>${esc(tr("k.v"))}</span></div><div><b>${w.reels.filter(r=>!r.tt).length}</b><span>Reels</span></div><div><b>${w.kpi.r}</b><span>${esc(tr("k.r"))}</span></div><div><b>${w.kpi.e}</b><span>${esc(tr("k.e"))}</span></div></div><p class="kpi-note">${w.part?esc(tr("k.part"))+" ":""}${esc(tr(w.reels.some(r=>r.tt)?"k.note2":"k.note"))}</p>`:`<p class="bp-count">${w.reels.length?w.reels.length+" "+esc(tr("bp.count")):esc(tr("bp.empty"))}</p>`}
    <div class="reels${LIVE?" live":""}">${w.reels.map((r,j)=>reelCard(r,j,tones[(i+j)%3],w.b)).join("")}</div>`;
   if(bp.hidden){bp.hidden=false; bp.scrollTop=0; document.body.style.overflow="hidden"; $("#bpBack").focus();} requestAnimationFrame(fitMinis);
 }
