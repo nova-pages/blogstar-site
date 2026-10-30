@@ -621,7 +621,7 @@ footer{background:var(--night);color:#8A8A8A;padding-block:clamp(72px,9vw,120px)
           <p class="alead" data-i="ac.lead">Blogçuluğun bütün sahələrini əhatə edən praktik təhsil proqramı. Şəxsi brenddən fotoqrafiyaya, video montajdan süni intellekt alətlərinə qədər hər mövzu agentliyin real kampaniya təcrübəsi əsasında tədris olunur.</p>
           <ul class="afmt"><li data-i="ac.f1">Kiçik qruplar</li><li data-i="ac.f2">Praktik tapşırıqlar</li><li data-i="ac.f3">Real brend brifləri</li></ul>
         </div>
-        <form class="aform" id="acad" name="academy" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <form class="aform" id="acad" name="academy" method="POST" novalidate>
           <input type="hidden" name="form-name" value="academy">
           <input type="hidden" name="dil" class="langField" value="az">
           <p hidden><label>bot <input name="bot-field"></label></p>
@@ -655,7 +655,7 @@ footer{background:var(--night);color:#8A8A8A;padding-block:clamp(72px,9vw,120px)
           <span style="color:#8A8A8A" data-i="ct.addr">Bakı, Azərbaycan</span>
         </div>
       </div>
-      <form class="form" id="brief" name="brief" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <form class="form" id="brief" name="brief" method="POST" novalidate>
         <input type="hidden" name="form-name" value="brief">
         <input type="hidden" name="dil" class="langField" value="az">
         <p hidden><label>bot <input name="bot-field"></label></p>
@@ -1183,7 +1183,7 @@ io.observe($(".mgrid"));
 const mnodes=[...document.querySelectorAll(".mnode")];
 [...$("#stages").children].forEach((li,i)=>{li.addEventListener("pointerenter",()=>mnodes[i].classList.add("hl"));li.addEventListener("pointerleave",()=>mnodes[i].classList.remove("hl"))});
 
-const LIVE=/(^|\.)blogstar\.az$|netlify\.app$/.test(location.hostname);
+const LIVE=/(^|\.)blogstar\.az$|netlify\.app$|github\.io$/.test(location.hostname);
 /* work tiles + brand pages */
 const tones=["g0","g1","g2"], TS=[1,0,2];
 const slug=b=>"brend-"+b.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
@@ -1320,7 +1320,8 @@ function wire(form,out,okKey){ $(form).addEventListener("submit",async e=>{e.pre
   f.querySelectorAll("[required]").forEach(x=>{const v=!x.value.trim(); x.setAttribute("aria-invalid",v); if(v&&!bad)bad=x});
   if(bad){o.textContent=tr("m.req")+" "+f.querySelector(`label[for="${bad.id}"]`).textContent+".";o.hidden=false;bad.focus();return}
   if(!LIVE){o.textContent=tr("m.preview");o.hidden=false;return}
-  try{const r=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(new FormData(f)).toString()}); if(!r.ok)throw 0; f.reset(); o.textContent=tr(okKey); o.hidden=false}
+  try{const d=Object.fromEntries(new FormData(f)); d._honey=d["bot-field"]||""; delete d["bot-field"]; delete d["form-name"]; d._subject="Blogstar sayt — "+(f.name==="academy"?"Academy qeydiyyatı":"Brif / əlaqə"); d._template="table"; d._captcha="false";
+  const r=await fetch("https://formsubmit.co/ajax/info@blogstar.az",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(d)}); if(!r.ok)throw 0; f.reset(); o.textContent=tr(okKey); o.hidden=false}
   catch{o.textContent=tr("m.err");o.hidden=false}
 });}
 wire("#brief","#f-out","m.okBrief");
