@@ -1,7 +1,7 @@
 name: fetch-covers
 on:
   push:
-    paths: ["tools/covers.txt"]
+    paths: ["tools/covers.txt","tools/covers_urls.txt"]
   workflow_dispatch:
 permissions:
   contents: write
