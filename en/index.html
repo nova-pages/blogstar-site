@@ -464,7 +464,7 @@ section.band{padding-block:clamp(64px,8vw,112px)}
 .pg-m li{background:var(--mist);border-radius:14px;padding:14px 16px;display:grid;gap:3px}.pg-m span{font-size:12px;color:var(--bordo)}.pg-m b{font-weight:500;font-size:15.5px;line-height:1.3}.pg-m small{font-size:13.5px;color:var(--muted);line-height:1.45}
 .pg-men{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .pg-mc{display:grid;gap:6px;align-content:start;background:var(--mist);border-radius:16px;padding:14px}
-.pg-mc .rbox.mpost{aspect-ratio:4/5;border-radius:12px;margin-bottom:6px;box-shadow:none}
+.pg-mc .rbox.mpost{aspect-ratio:1/1;border-radius:12px;margin-bottom:6px;box-shadow:none}
 .pg-mc b{font-weight:500;font-size:16px}.pg-r{font-size:13px;color:var(--bordo)}.pg-mc p{margin:0;font-size:13.5px;line-height:1.55;color:#383838}.pg-mc a{font-size:13px;color:var(--bordo);text-decoration:none}
 @media (max-width:760px){.pg-men{grid-template-columns:1fr}}
 .pg-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
@@ -1201,7 +1201,7 @@ const tones=["g0","g1","g2"], TS=[1,0,2];
 const slug=b=>"brend-"+b.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const cntTxt=w=>w.reels.length?`${w.reels.length} Reels`:tr("wk.soon");
 const miniFrame=r=>{ if(!LIVE||!r||r.ne||r.tt) return ""; const e=embedURL(r.url); return e?`<iframe class="mif" src="${e}" loading="lazy" tabindex="-1" scrolling="no" title=""></iframe>`:""; };
-function fitMinis(){ document.querySelectorAll(".rbox").forEach(b=>{ const f=b.querySelector("iframe"); if(!f||b.classList.contains("tt")) return; const sc=Math.max(b.clientHeight/408,b.clientWidth/326)*1.03; f.style.transform=`translate(${((b.clientWidth-326*sc)/2).toFixed(1)}px,${(-54*sc-(408*sc-b.clientHeight)/2).toFixed(1)}px) scale(${sc.toFixed(4)})`; });
+function fitMinis(){ document.querySelectorAll(".rbox").forEach(b=>{ const f=b.querySelector("iframe"); if(!f||b.classList.contains("tt")) return; if(b.classList.contains("mpost")){const k=b.clientWidth/326; f.style.transform=`translate(0,${(-54*k).toFixed(1)}px) scale(${k.toFixed(4)})`; return;} const sc=Math.max(b.clientHeight/408,b.clientWidth/326)*1.03; f.style.transform=`translate(${((b.clientWidth-326*sc)/2).toFixed(1)}px,${(-54*sc-(408*sc-b.clientHeight)/2).toFixed(1)}px) scale(${sc.toFixed(4)})`; });
  document.querySelectorAll(".mini").forEach(m=>{ const f=m.querySelector(".mif"); if(!f) return; const w=m.clientWidth,h=m.clientHeight,sc=h/408; f.style.transform=`translate(${((w-326*sc)/2).toFixed(1)}px,${(-54*sc).toFixed(1)}px) scale(${sc.toFixed(4)})`; }); }
 addEventListener("resize",()=>fitMinis());
 function renderTiles(){
