@@ -205,7 +205,7 @@ section.band{padding-block:clamp(64px,8vw,112px)}
 .sx{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);margin-top:64px;align-items:start}
 .sxl{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink);counter-reset:sx}
 .sxr{position:relative;display:grid;grid-template-columns:56px minmax(0,1fr) 52px;align-items:center;column-gap:18px;padding:22px 22px 22px 6px;border-bottom:1px solid var(--rule);overflow:hidden;isolation:isolate;transition:color .45s}
-.sxr::before{content:"";position:absolute;inset:0;background:var(--bordo);transform:scaleX(0);transform-origin:left center;transition:transform .6s cubic-bezier(.7,0,.2,1);z-index:-1}
+.sxr::before{content:"";position:absolute;inset:0;background:#000;transform:scaleX(0);transform-origin:left center;transition:transform .6s cubic-bezier(.7,0,.2,1);z-index:-1}
 .sxr.on{color:#fff}.sxr.on::before{transform:scaleX(1)}
 .sxn{font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums;padding-left:14px;transition:color .45s}
 .sxr.on .sxn{color:rgba(255,255,255,.75)}
