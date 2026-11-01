@@ -503,6 +503,7 @@ section.band{padding-block:clamp(64px,8vw,112px)}
 
 /* contact */
 .contact{background:var(--night);color:#fff}
+section.band.contact{padding-bottom:clamp(36px,4vw,56px)}
 .contact .kicker{color:rgba(255,255,255,.7)}
 .cgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;max-width:1080px;margin:0 auto}
 @media (max-width:900px){.cgrid{grid-template-columns:1fr}}
@@ -529,7 +530,7 @@ section.band{padding-block:clamp(64px,8vw,112px)}
 .msg{font-size:15px;border-radius:12px;padding:12px 14px;background:rgba(126,0,25,.14);color:#fff}
 
 /* footer */
-footer{background:var(--night);color:#8A8A8A;padding-block:clamp(56px,7vw,88px) 32px;overflow:hidden}
+footer{background:var(--night);color:#8A8A8A;padding-block:clamp(20px,2.5vw,32px) 28px;overflow:hidden}
 .brands{position:relative;z-index:2;background:#000;padding-block:6px 30px}
 .hero+.brands::after{content:"";position:absolute;left:0;right:0;top:100%;height:clamp(110px,13vw,180px);background:linear-gradient(180deg,#000 0%,rgba(0,0,0,.8) 20%,rgba(0,0,0,.45) 45%,rgba(0,0,0,.16) 72%,rgba(0,0,0,.04) 90%,rgba(0,0,0,0) 100%);pointer-events:none}
 #xidmetler{position:relative;z-index:1;padding-top:clamp(150px,16vw,220px)}
@@ -541,10 +542,10 @@ footer{background:var(--night);color:#8A8A8A;padding-block:clamp(56px,7vw,88px) 
 .marq:hover ul{animation-play-state:paused}
 @keyframes marq{to{transform:translateX(-100%)}}
 @media (prefers-reduced-motion:reduce){.marq ul{animation:none}.marq{flex-wrap:wrap;justify-content:center}}
-.fquote{margin:0 0 clamp(36px,4vw,52px);max-width:30ch;font:400 clamp(22px,2.4vw,32px)/1.25 var(--serif);letter-spacing:-.015em;color:#fff}
+.fquote{margin:0 0 clamp(24px,3vw,36px);max-width:34ch;font:400 clamp(19px,1.9vw,26px)/1.3 var(--serif);letter-spacing:-.015em;color:#fff}
 .fquote em{color:#fff}
-.mark{display:block;width:100%;opacity:.95;padding-block:26px 20px;border-top:1px solid rgba(255,255,255,.1)}
-.mark img{width:min(100%,150px);height:auto;display:block}
+.mark{display:block;width:100%;opacity:.95;padding-block:20px 16px;border-top:1px solid rgba(255,255,255,.1)}
+.mark img{width:min(100%,120px);height:auto;display:block}
 .fbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
 .fbar nav{display:flex;gap:18px;flex-wrap:wrap}
 .fbar a:hover{color:#fff}
@@ -714,7 +715,7 @@ footer{background:var(--night);color:#8A8A8A;padding-block:clamp(56px,7vw,88px) 
     <blockquote class="fquote" data-ih="ap.q">İnsanlar reklama deyil, <em>etibar etdikləri insanlara</em> inanır.</blockquote>
     <a class="mark" href="#home" aria-label="Blogstar"><img src="/img/i/9b4c23b454cd.png" alt="Blogstar"></a>
     <div class="fbar"><span data-i="ft.rights">© 2016–2026 Blogstar. Bütün hüquqlar qorunur.</span>
-      <nav><a href="#xidmetler" data-i="nav.services">Xidmətlər</a><a href="#metod" data-i="nav.method">Metodologiya</a><a href="#media" data-i="nav.media">Media mərkəzi</a><a href="#isler" data-i="nav.work">İşlərimiz</a><a href="/academy/">Influencer School</a><a href="/xidmetler/influencer-marketinq/">Influencer marketinq</a><a href="/en/influencer-marketing-azerbaijan/" hreflang="en">Influencer marketing in Azerbaijan</a><a href="/media/">Arxiv</a><a href="#academy">Academy</a><a href="https://www.instagram.com/blogstar.az/" target="_blank" rel="noopener">Instagram</a></nav></div>
+      <nav><a href="#xidmetler" data-i="nav.services">Xidmətlər</a><a href="#metod" data-i="nav.method">Metodologiya</a><a href="#media" data-i="nav.media">Media mərkəzi</a><a href="#isler" data-i="nav.work">İşlərimiz</a><a href="/academy/">Influencer School</a><a href="/xidmetler/influencer-marketinq/" data-i="ft.im">Influencer marketinq</a><a href="/en/influencer-marketing-azerbaijan/" hreflang="en">Influencer marketing in Azerbaijan</a><a href="/media/" data-i="ft.ar">Arxiv</a><a href="#academy">Academy</a><a href="https://www.instagram.com/blogstar.az/" target="_blank" rel="noopener">Instagram</a></nav></div>
   </div>
 </footer>
 
@@ -1410,7 +1411,7 @@ az:{
  "m.req":"Zəhmət olmasa, bu xananı doldurun:","m.preview":"Önizləmə rejimi: sayt blogstar.az domenində aktivləşdirildikdən sonra müraciətlər qəbul ediləcək.",
  "m.okBrief":"Sorğunuz qəbul edildi. Bir iş günü ərzində sizinlə əlaqə saxlanılacaq.","m.okAcad":"Qeydiyyatınız qəbul edildi. Növbəti qrup barədə sizə məlumat veriləcək.",
  "m.err":"Müraciət göndərilmədi. İnternet bağlantısını yoxlayıb yenidən cəhd edin və ya info@blogstar.az ünvanına yazın.",
- "ft.rights":"© 2016–2026 Blogstar. Bütün hüquqlar qorunur.","close":"Bağla","ft.brands":"Əməkdaşlıq etdiyimiz brendlər"
+ "ft.rights":"© 2016–2026 Blogstar. Bütün hüquqlar qorunur.","close":"Bağla","ft.brands":"Əməkdaşlıq etdiyimiz brendlər","ft.im":"Influencer marketinq","ft.ar":"Arxiv"
 },
 en:{
  "mo.1":"January","mo.2":"February","mo.3":"March","mo.4":"April","mo.5":"May","mo.6":"June","mo.7":"July","mo.8":"August","mo.9":"September","mo.10":"October","mo.11":"November","mo.12":"December","ar.h":"Archive: 2016–2020","ar.p":"Events, seminars and articles from Blogstar's early years, carried over from the previous blogstar.az website.","ar.s.ev":"Event","ar.s.ac":"Seminar","ar.s.ar":"Article","ar.s.in":"Interview","ar.c.all":"All","ar.c.ev":"Events","ar.c.ac":"Seminars & training","ar.c.ar":"Articles","ar.c.in":"Interviews","ar.more":"Show all","ar.less":"Show less","ar.src":"Blogstar archive","ar.azonly":"This archive article is available in Azerbaijani only.","ar.page":"Open as a page","k.views":"views","k.note2":"View rate is the ratio of total video views to the combined follower count of the participating influencers. Figures are based on public Instagram and TikTok data (October 2026).","k.note3":"Total views are based on the agency's campaign reports and include videos not shown on this page.","k.part":"Only a selection of the campaign videos is shown here.","k.v":"Total views","k.a":"Average views per video","k.r":"View rate","k.e":"Influencers","k.note":"View rate is the ratio of total video views to the combined follower count of the participating influencers. Figures are based on public Instagram data (October 2026).","nav.services":"Services","sv.h":"A complete range of services for brands.","sv.p":"From strategy to production, every service is built around influencer marketing and delivered by a single team.","sv.more":"Learn more","sv.inc":"What is included","sv.back":"All services","sv.ask":"Send an enquiry about this service","nav.method":"Methodology","nav.work":"Our work","nav.media":"Newsroom","cta.start":"Start a campaign","menu.open":"Menu","menu.close":"Close",
@@ -1445,7 +1446,7 @@ en:{
  "m.req":"Please complete this field:","m.preview":"Preview mode: submissions will be accepted once the site is live on blogstar.az.",
  "m.okBrief":"Thank you. We have received your enquiry and will contact you within one business day.","m.okAcad":"Thank you. Your registration has been received, and we will be in touch about the next group.",
  "m.err":"Your message could not be sent. Please check your connection and try again, or write to info@blogstar.az.",
- "ft.rights":"© 2016–2026 Blogstar. All rights reserved.","close":"Close","ft.brands":"Brands we work with"
+ "ft.rights":"© 2016–2026 Blogstar. All rights reserved.","close":"Close","ft.brands":"Brands we work with","ft.im":"Influencer marketing services","ft.ar":"Archive"
 }};
 const PAGE_LANG_AZ="az";
 let LANG=PAGE_LANG_AZ;
