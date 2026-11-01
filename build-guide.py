@@ -90,7 +90,7 @@ footer{border-top:1px solid var(--rule);margin-top:70px;padding:30px 0;font-size
 doc = f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{E(TITLE)}</title><meta name="description" content="{E(DESC)}">
-<link rel="canonical" href="{URL}"><link rel="alternate" hreflang="en" href="{URL}"><link rel="alternate" hreflang="az" href="https://blogstar.az/xidmetler/influencer-marketinq/">
+<link rel="canonical" href="{URL}"><link rel="alternate" hreflang="en" href="{URL}"><link rel="alternate" hreflang="az" href="https://blogstar.az/influencer-marketinq-azerbaycan/"><link rel="alternate" hreflang="ru" href="https://blogstar.az/ru/influencer-marketing-azerbaijan/"><link rel="alternate" hreflang="x-default" href="https://blogstar.az/influencer-marketinq-azerbaycan/">
 <link rel="icon" type="image/png" href="/favicon.png"><meta name="theme-color" content="#000000">
 <meta property="og:type" content="article"><meta property="og:site_name" content="Blogstar"><meta property="og:title" content="{E(TITLE)}"><meta property="og:description" content="{E(DESC)}"><meta property="og:url" content="{URL}"><meta property="og:image" content="https://blogstar.az/og.png"><meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
@@ -98,7 +98,7 @@ doc = f"""<!doctype html>
 <header><div class="w"><a href="/en/" aria-label="Blogstar"><img src="/logo.png" alt="Blogstar"></a><nav><a href="/en/#isler">Work</a><a href="/academy/">Academy</a><a class="cta" href="/en/#elaqe">Contact</a></nav></div></header>
 <main class="w">{body}
 <div class="box"><h2>Plan your campaign with Blogstar</h2><p>Tell us about your brand, goals and timing — we will prepare an influencer marketing proposal for the Azerbaijani market. info@blogstar.az</p><a class="btn" href="/en/#elaqe">Send a brief</a></div></main>
-<footer><div class="w"><span>© 2016–2026 Blogstar · Influencer marketing agency · 22 Yusif Mammadaliyev St, Baku AZ1005</span><span><a href="/en/">Home</a> · <a href="/academy/">Influencer School</a> · <a href="https://www.instagram.com/blogstar.az/">Instagram</a></span></div></footer>
+<footer><div class="w"><span>© 2016–2026 Blogstar · Influencer marketing agency · Baku, Azerbaijan · online agency</span><span><a href="/en/">Home</a> · <a href="/academy/">Influencer School</a> · <a href="https://www.instagram.com/blogstar.az/">Instagram</a></span></div></footer>
 </body></html>"""
 p = pathlib.Path("en/influencer-marketing-azerbaijan"); p.mkdir(parents=True, exist_ok=True)
 (p / "index.html").write_text(doc, encoding="utf-8")
