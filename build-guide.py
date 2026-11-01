@@ -68,7 +68,7 @@ ld = [
  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in FAQ]},
  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://blogstar.az/en/"},{"@type":"ListItem","position":2,"name":"Influencer marketing in Azerbaijan","item":URL}]}]
 CSS = """@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300..600&display=swap');
-:root{--ink:#000;--muted:#6B6B6B;--rule:#E2DED7;--bordo:#5C0012;--paper:#F6F4F0;--mist:#ECE9E4}
+:root{--ink:#000;--muted:#6B6B6B;--rule:#D9D3C9;--bordo:#5C0012;--paper:#EEEAE3;--mist:#E3DED6}
 *{box-sizing:border-box}body{margin:0;font:400 17px/1.7 Montserrat,Arial,sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
 a{color:var(--bordo)}.w{max-width:820px;margin:0 auto;padding:0 20px}
 header{background:#000}header .w{max-width:1240px;display:flex;justify-content:space-between;align-items:center;height:72px}
