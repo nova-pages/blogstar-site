@@ -242,6 +242,16 @@ section.band{padding-block:clamp(64px,8vw,112px)}
   .sxs{display:block;grid-column:2/4;grid-row:2;color:var(--muted);font-size:15px;transition:color .45s}
   .sxr.on .sxs{color:rgba(255,255,255,.8)}
 }
+
+/* section transitions */
+.hero{padding-bottom:36px}
+.hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(180deg,transparent,rgba(92,0,18,.32));pointer-events:none;z-index:0}
+#xidmetler{position:relative;z-index:3;margin-top:-36px;background:var(--paper);border-radius:36px 36px 0 0}
+.method,.academy{margin-inline:clamp(8px,1.6vw,20px);border-radius:clamp(24px,3vw,40px)}
+#isler{border-top:0}
+.contact{position:relative;z-index:3;margin-top:clamp(40px,5vw,72px);border-radius:36px 36px 0 0;background:linear-gradient(180deg,#160004 0,#000 220px)}
+.contact::before{content:"";position:absolute;left:50%;top:0;width:min(560px,70%);height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,rgba(126,0,25,.9),transparent)}
+@media (max-width:600px){#xidmetler{border-radius:24px 24px 0 0;margin-top:-24px}.contact{border-radius:24px 24px 0 0;margin-top:32px}}
 /* scroll reveal */
 .rv{opacity:0}
 .rv.in{animation:rvIn 1s cubic-bezier(.2,.8,.2,1) var(--d,0s) both}
