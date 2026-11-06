@@ -503,6 +503,9 @@ section.band{padding-block:clamp(64px,8vw,112px)}
 .aslide.is-on{animation:asIn .55s cubic-bezier(.2,.8,.2,1) both}
 @keyframes asIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.aslide.is-on{animation:none}}
+.aph{margin:0 0 22px;width:clamp(120px,14vw,160px);aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:#D6D0C6}
+.aph img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1)}
+.aph.empty img{display:none}
 .aname{font:400 20px var(--display);margin-top:10px}
 .anav{display:flex;align-items:center;gap:10px;margin-top:clamp(28px,4vw,44px);padding-top:18px;border-top:1px solid var(--rule)}
 .acount{font:400 14px var(--display);color:var(--muted);letter-spacing:.04em}
@@ -669,6 +672,7 @@ footer{background:var(--night);color:#8A8A8A;padding-block:clamp(20px,2.5vw,32px
       <div class="aslide is-on" id="as-cn" role="group" aria-roledescription="slide" aria-label="1 / 2">
       <div class="agrid">
         <div class="aintro">
+          <figure class="aph"><img src="/img/academy/cefer-necefov.jpg" alt="Cəfər Nəcəfov" width="160" height="200" loading="lazy" onerror="this.parentNode.classList.add('empty')"></figure>
           <p class="kicker" data-i="cn.k">Blogstar Academy · Fərdi təlim</p>
           <h2 class="h2" id="at-cn">Cəfər Nəcəfov</h2>
           <p class="aname" data-i="cn.t">[Kursun adı]</p>
