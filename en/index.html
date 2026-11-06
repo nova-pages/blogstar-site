@@ -503,9 +503,12 @@ section.band{padding-block:clamp(64px,8vw,112px)}
 .aslide.is-on{animation:asIn .55s cubic-bezier(.2,.8,.2,1) both}
 @keyframes asIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.aslide.is-on{animation:none}}
-.atr{display:flex;align-items:center;gap:18px;margin:18px 0 26px}
-.astar{margin:0;width:clamp(120px,12vw,150px);aspect-ratio:1;flex:none;clip-path:polygon(50.0% 4.0%,65.9% 32.2%,97.6% 38.5%,75.7% 62.3%,79.4% 94.5%,50.0% 81.0%,20.6% 94.5%,24.3% 62.3%,2.4% 38.5%,34.1% 32.2%);background:#D6D0C6}
-.astar img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1)}
+.atr{display:flex;align-items:center;gap:clamp(18px,2.4vw,30px);margin:22px 0 30px}
+.astar{margin:0;position:relative;width:clamp(150px,14vw,184px);aspect-ratio:1;flex:none}
+.astar svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.astar-o{transform:translate(9px,7px)}
+.astar-o path{fill:none;stroke:var(--bordo);stroke-width:.006}
+.astar-p image{filter:grayscale(1) contrast(1.05)}
 .atr-n{display:block;font:400 clamp(22px,2.2vw,28px)/1.15 var(--display);letter-spacing:-.02em}
 .atr-r{display:block;font-size:14px;color:var(--muted);margin-top:4px}
 .academy .h2c{font-size:clamp(30px,3.4vw,44px);line-height:1.08}
@@ -675,7 +678,7 @@ footer{background:var(--night);color:#8A8A8A;padding-block:clamp(20px,2.5vw,32px
       <div class="agrid">
         <div class="aintro">
           <p class="kicker" data-i="cn.k">Blogstar Academy · Fərdi təlim</p>
-          <div class="atr"><figure class="astar"><img src="/img/academy/cefer-necefov.jpg" alt="Cəfər Nəcəfov" width="600" height="600" loading="lazy"></figure><div><b class="atr-n">Cəfər Nəcəfov</b><span class="atr-r" data-i="cn.r">Təlimçi</span></div></div>
+          <div class="atr"><figure class="astar"><svg viewBox="0 0 1 1" aria-hidden="true" class="astar-o"><path d="M0.4625,0.0884 Q0.5000,0.0300 0.5375,0.0884 L0.6500,0.2635 Q0.6705,0.2954 0.7071,0.3050 L0.9084,0.3579 Q0.9755,0.3755 0.9316,0.4292 L0.7998,0.5903 Q0.7758,0.6196 0.7780,0.6574 L0.7899,0.8652 Q0.7939,0.9345 0.7292,0.9093 L0.5353,0.8337 Q0.5000,0.8200 0.4647,0.8337 L0.2708,0.9093 Q0.2061,0.9345 0.2101,0.8652 L0.2220,0.6574 Q0.2242,0.6196 0.2002,0.5903 L0.0684,0.4292 Q0.0245,0.3755 0.0916,0.3579 L0.2929,0.3050 Q0.3295,0.2954 0.3500,0.2635 Z"/></svg><svg viewBox="0 0 1 1" role="img" aria-label="Cəfər Nəcəfov" class="astar-p"><defs><clipPath id="cnStar" clipPathUnits="objectBoundingBox"><path d="M0.4625,0.0884 Q0.5000,0.0300 0.5375,0.0884 L0.6500,0.2635 Q0.6705,0.2954 0.7071,0.3050 L0.9084,0.3579 Q0.9755,0.3755 0.9316,0.4292 L0.7998,0.5903 Q0.7758,0.6196 0.7780,0.6574 L0.7899,0.8652 Q0.7939,0.9345 0.7292,0.9093 L0.5353,0.8337 Q0.5000,0.8200 0.4647,0.8337 L0.2708,0.9093 Q0.2061,0.9345 0.2101,0.8652 L0.2220,0.6574 Q0.2242,0.6196 0.2002,0.5903 L0.0684,0.4292 Q0.0245,0.3755 0.0916,0.3579 L0.2929,0.3050 Q0.3295,0.2954 0.3500,0.2635 Z"/></clipPath></defs><image href="/img/academy/cefer-necefov.jpg" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice" clip-path="url(#cnStar)"/></svg></figure><div><b class="atr-n">Cəfər Nəcəfov</b><span class="atr-r" data-i="cn.r">Təlimçi</span></div></div>
           <h2 class="h2 h2c" id="at-cn" data-i="cn.t">Instagramın sirləri: alqoritm, alətlər və süni intellekt</h2>
           <p class="alead" data-i="cn.lead">Instagramın işləmə prinsiplərini dərindən öyrədən fərdi təlim. Alqoritmin məntiqi, platformanın az bilinən imkanları və süni intellekt əsaslı alətlərlə kontent hazırlanması praktik nümunələr üzərində izah olunur.</p>
           <ul class="afmt"><li data-i="cn.f1">Instagram alqoritmi</li><li data-i="cn.f2">AI alətləri</li><li data-i="cn.f3">Platformanın gizli imkanları</li></ul>
