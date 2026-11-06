@@ -1805,7 +1805,7 @@ function wire(form,out,okKey,done){ $(form).addEventListener("submit",async e=>{
   if(!LIVE){o.textContent=tr("m.preview");o.hidden=false;return}
   const sb=f.querySelector("[type=submit]"), st=sb.textContent; sb.disabled=true; sb.textContent=tr("m.sending");
   try{const d=Object.fromEntries(new FormData(f)); d._honey=d["bot-field"]||""; delete d["bot-field"]; delete d["form-name"]; d._subject="Blogstar sayt — "+(f.name==="academy"?"Academy qeydiyyatı":"Brif / əlaqə"); d._template="table"; d._captcha="false";
-  var D=d; const ac=new AbortController(), to=setTimeout(()=>ac.abort(),12000);
+  const ac=new AbortController(), to=setTimeout(()=>ac.abort(),8000);
   const r=await fetch("https://formsubmit.co/ajax/info@blogstar.az",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(d),signal:ac.signal}); clearTimeout(to); if(!r.ok)throw 0; const j=await r.json().catch(()=>({})); if(j.success===false||j.success==="false")throw 0; f.reset(); o.textContent=tr(okKey); o.hidden=false; done&&done(f)}
   catch{ const dd=Object.fromEntries(new FormData(f)); delete dd["bot-field"]; delete dd["form-name"];
     const subj="Blogstar sayt — "+(f.name==="academy"?"Academy qeydiyyatı":"Brif / əlaqə")+(dd.kurs?" — "+dd.kurs:"");
