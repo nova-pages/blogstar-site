@@ -504,9 +504,11 @@ section.band{padding-block:clamp(64px,8vw,112px)}
 .aslide.is-on{animation:asIn .55s cubic-bezier(.2,.8,.2,1) both}
 @keyframes asIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.aslide.is-on{animation:none}}
-.atr{display:flex;align-items:center;gap:18px;margin:22px 0 28px}
-.aava{margin:0;width:clamp(84px,8vw,104px);aspect-ratio:1;flex:none;border-radius:50%;overflow:hidden;background:#D6D0C6;box-shadow:0 0 0 1px var(--rule)}
-.aava img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.04)}
+.atr{display:flex;align-items:flex-end;gap:22px;margin:18px 0 28px;border-bottom:1px solid var(--rule)}
+.atr>div{padding-bottom:18px}
+.acut{margin:0;width:clamp(150px,15vw,210px);flex:none;position:relative}
+.acut::before{content:"";position:absolute;left:8%;right:8%;top:10%;bottom:0;border-radius:50% 50% 0 0;background:#D8D1C7}
+.acut img{position:relative;display:block;width:100%;height:auto}
 .atr-n{display:block;font:400 clamp(22px,2.2vw,28px)/1.15 var(--display);letter-spacing:-.02em}
 .atr-r{display:block;font-size:14px;color:var(--muted);margin-top:4px}
 .academy .h2c{font-size:clamp(30px,3.4vw,44px);line-height:1.08}
@@ -676,7 +678,7 @@ footer{background:var(--night);color:#8A8A8A;padding-block:clamp(20px,2.5vw,32px
       <div class="agrid">
         <div class="aintro">
           <p class="kicker" data-i="cn.k">Blogstar Academy · Fərdi təlim</p>
-          <div class="atr"><figure class="aava"><img src="/img/academy/cefer-necefov.jpg" alt="Cəfər Nəcəfov" width="480" height="480" loading="lazy"></figure><div><b class="atr-n">Cəfər Nəcəfov</b><span class="atr-r" data-i="cn.r">Təlimçi</span></div></div>
+          <div class="atr"><figure class="acut"><picture><source srcset="/img/academy/cefer-necefov.webp" type="image/webp"><img src="/img/academy/cefer-necefov.png" alt="Cəfər Nəcəfov" width="560" height="560" loading="lazy"></picture></figure><div><b class="atr-n">Cəfər Nəcəfov</b><span class="atr-r" data-i="cn.r">Təlimçi</span></div></div>
           <h2 class="h2 h2c" id="at-cn" data-i="cn.t">Instagramın sirləri: alqoritm, alətlər və süni intellekt</h2>
           <p class="alead" data-i="cn.lead">Instagramın işləmə prinsiplərini dərindən öyrədən fərdi təlim. Alqoritmin məntiqi, platformanın az bilinən imkanları və süni intellekt əsaslı alətlərlə kontent hazırlanması praktik nümunələr üzərində izah olunur.</p>
           <ul class="afmt"><li data-i="cn.f1">Instagram alqoritmi</li><li data-i="cn.f2">AI alətləri</li><li data-i="cn.f3">Platformanın gizli imkanları</li></ul>
