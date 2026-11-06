@@ -1837,7 +1837,7 @@ function openCn(){
   <ul class="afmt pg-c"><li class="adate">${esc(tr("cn.d"))}</li><li class="aprice">${esc(tr("cn.p"))}</li><li>${esc(tr("cn.f1"))}</li><li>${esc(tr("cn.f2"))}</li><li>${esc(tr("cn.f3"))}</li></ul>
   <h4>${esc(tr("cn.prog"))}</h4><ol class="pg-m">${[1,2,3,4,5,6].map(k=>`<li><span>0${k}</span><b>${esc(tr("cn.m"+k))}</b><small>${esc(tr("cn.m"+k+"t"))}</small></li>`).join("")}</ol>
   <div class="pg-2"><div><h4>${esc(tr("cn.who"))}</h4>${li(tr("cn.w"))}</div><div><h4>${esc(tr("cn.gain"))}</h4>${li(tr("cn.g"))}</div></div>
-  <button class="go" type="button" id="cnGo">${esc(tr("cn.cta"))}</button></div>`,"wide");
+  <button class="go" type="button" id="cnGo">${esc(tr("cn.cta"))}</button> <a href="/academy/instagramin-sirleri/" style="margin-left:14px;font-size:15px">${LANG==="en"?"Course page →":"Kursun səhifəsi →"}</a></div>`,"wide");
   dbox.querySelector("#cnGo").addEventListener("click",()=>{closeDlg();window.acGo&&acGo(0);document.getElementById("acad-cn").scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>document.getElementById("c-name").focus({preventScroll:true}),600)});
 }
 document.getElementById("cnBtn").addEventListener("click",openCn);
