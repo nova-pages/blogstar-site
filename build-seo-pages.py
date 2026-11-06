@@ -8,7 +8,7 @@ D = json.loads(pathlib.Path("seo-data.json").read_text(encoding="utf-8"))
 TODAY = datetime.date.today().isoformat()
 SITE = "https://blogstar.az"
 ORG = {"@id": SITE + "/#org", "@type": "Organization", "name": "Blogstar", "url": SITE + "/", "logo": SITE + "/icon-512.png"}
-ADDR = {"az": "Bakı, Azərbaycan · onlayn agentlik", "en": "Baku, Azerbaijan · online agency", "ru": "Баку, Азербайджан · онлайн-агентство"}
+ADDR = {"az": "Bakı, Azərbaycan · online agentlik", "en": "Baku, Azerbaijan · online agency", "ru": "Баку, Азербайджан · онлайн-агентство"}
 
 
 def slugify(t):
